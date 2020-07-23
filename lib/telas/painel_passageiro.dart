@@ -3,6 +3,8 @@ import 'package:alpha_car/modelo/destino.dart';
 import 'package:alpha_car/modelo/marcador.dart';
 import 'package:alpha_car/modelo/requisicao.dart';
 import 'package:alpha_car/modelo/usuario.dart';
+import 'package:alpha_car/telas/menu_sidebar.dart';
+import 'package:alpha_car/telas/tela_informacoes_destino.dart';
 import 'package:alpha_car/util/status_requisicao.dart';
 import 'package:alpha_car/util/usuario_firebase.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -280,10 +282,12 @@ class _PainelPassageiroState extends State<PainelPassageiro> {
     _exibirCaixaEnderecoDestino = true;
 
     //Metodo
-    _alterarBotaoPrincipal("Chamar Carro",Color(0xff1ebbd8),(){
+   /* _alterarBotaoPrincipal("Chamar Carro",Color(0xff1ebbd8),(){
       _chamarUber();
+    });*/
+    _alterarBotaoPrincipal("Escolher Destino",Color(0xff1ebbd8),(){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>TelaDestino()));
     });
-
 
     if(_localPassageiro != null){
 
@@ -736,6 +740,7 @@ class _PainelPassageiroState extends State<PainelPassageiro> {
           )
         ],
       ),
+      drawer: MenuSidebar(),
       body: Container(
 
         child: Stack(
@@ -833,6 +838,7 @@ class _PainelPassageiroState extends State<PainelPassageiro> {
               child: Padding(
                 padding: Platform.isIOS ? EdgeInsets.fromLTRB(20, 10, 20, 25) : EdgeInsets.all(10),
                 child: RaisedButton(
+
                   child: Text(_textoBotao,style: TextStyle(color: Colors.white,fontSize: 20),),
                   color: _corBotao,
                   padding: EdgeInsets.fromLTRB(32, 16, 32, 16),

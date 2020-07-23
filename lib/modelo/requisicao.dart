@@ -27,6 +27,7 @@ class Requisicao {
     Map<String,dynamic> dadosPassageiro = {
       "nome":this.passageiro.nome,
       "email": this.passageiro.email,
+      "telefone":this.passageiro.telefone,
       "tipoUsuario":this.passageiro.tipoUsuario,
       "idUsuario": this.passageiro.idUsuario,
       "latitude":this.passageiro.latitude,

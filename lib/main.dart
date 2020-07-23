@@ -11,12 +11,12 @@ final ThemeData temaPadrao = ThemeData(
 void main() {
   runApp(
       MaterialApp(
-    title: "Alpha Car",
-    home: Home(),
-    theme: temaPadrao,
-    initialRoute: "/",
-    onGenerateRoute: Rotas.gerarRotas,
-    debugShowCheckedModeBanner: false,
+        title: "Alpha Car",
+        home: Home(),
+        theme: temaPadrao,
+        initialRoute: "/",
+        onGenerateRoute: Rotas.gerarRotas,
+        debugShowCheckedModeBanner: false,
 
       ));
 }

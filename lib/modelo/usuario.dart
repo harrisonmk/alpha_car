@@ -2,6 +2,7 @@ class Usuario {
 
   String _idUsuario;
   String _nome;
+  String _telefone;
   String _email;
   String _senha;
   String _tipoUsuario;
@@ -24,6 +25,7 @@ class Usuario {
   Map<String,dynamic> map = {
     "idUsuario":this.idUsuario,
     "nome":this.nome,
+    "telefone":this.telefone,
     "email":this.email,
     "tipoUsuario":this.tipoUsuario,
     "latitude":this.latitude,
@@ -73,6 +75,12 @@ class Usuario {
 
   set latitude(double value) {
     _latitude = value;
+  }
+
+  String get telefone => _telefone;
+
+  set telefone(String value) {
+    _telefone = value;
   }
 
 
